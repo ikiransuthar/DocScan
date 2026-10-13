@@ -62,7 +62,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         prefs.edit().putInt("quality", index).apply()
     }
 
-    fun setGalleryImport(value: Boolean) {
+     fun updateGalleryImport(value: Boolean) {
         galleryImport = value
         prefs.edit().putBoolean("gallery", value).apply()
     }
