@@ -157,7 +157,7 @@ fun AppRoot(vm: MainViewModel) {
                     qualityIndex = vm.qualityIndex,
                     onQuality = { vm.setQuality(it) },
                     galleryImport = vm.galleryImport,
-                    onGalleryImport = { vm.setGalleryImport(it) }
+                    onGalleryImport = { vm.updateGalleryImport(it) }
                 )
             }
         }
