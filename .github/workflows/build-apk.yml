@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: DocScan
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,6 +25,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.9
+          build-root-directory: DocScan
 
       - name: Build debug APK
         run: gradle assembleDebug --stacktrace
@@ -30,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DocScan-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: DocScan/app/build/outputs/apk/debug/app-debug.apk
